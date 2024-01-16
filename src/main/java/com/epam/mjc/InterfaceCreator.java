@@ -12,11 +12,11 @@ public class InterfaceCreator {
     public Predicate<List<String>> isValuesStartWithUpperCase() {
         return strings -> {
             for (var str : strings) {
-                if (!str.substring(0, 1).equals(str.substring(0, 1).toUpperCase())) {
+                if (!str.substring(0, 1).equals(str.substring(0, 1).toUpperCase()) || str.charAt(0) < 'A' || str.charAt(0) > 'z') {
                     return false;
                 }
             }
-            return false;
+            return true;
         };
     }
 
